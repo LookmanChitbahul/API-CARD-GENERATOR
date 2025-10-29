@@ -1,0 +1,91 @@
+/* styles.css — dark professional theme (select visible by default) */
+
+:root{
+  --bg-0: #060812;
+  --bg-1: #0b1220;
+  --panel: #0f1724;
+  --muted: #9aa4b2;
+  --text: #e6eef8;
+  --accent: #60a5fa;
+  --accent-2: #6ee7b7;
+  --glass: rgba(255,255,255,0.03);
+  --radius: 12px;
+  --shadow: 0 8px 30px rgba(2,6,23,0.6);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", "Courier New", monospace;
+  --ui: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg-0) 0%, #071227 50%, var(--bg-1) 100%);color:var(--text);font-family:var(--ui);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.container{max-width:1120px;margin:28px auto;padding:24}
+
+/* Header */
+.site-header{display:flex;flex-direction:column;gap:6px;margin-bottom:20px}
+.brand{font-size:22px;margin:0;letter-spacing:0.2px}
+.subtitle{margin:0;color:var(--muted);font-size:13px}
+
+/* Grid layout */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px}
+
+/* Card */
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,0.03);display:flex;flex-direction:column;min-height:220px}
+.card-head{display:flex;flex-direction:column;gap:6px;margin-bottom:10px}
+.card h2{margin:0;font-size:18px}
+.meta{color:var(--muted);font-size:13px}
+.url{font-family:var(--mono);font-size:12px;background:transparent;padding:2px 6px;border-radius:6px;color:#b6d7ff;display:inline-block;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* Form controls */
+.label{display:block;margin:6px 0 8px;color:var(--muted);font-size:13px}
+
+/* MAKE SELECT VISIBLE & STYLISH */
+.select{
+  width:100%;
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.06);
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03));
+  color:var(--text);
+  font-size:14px;
+  outline:none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+                    linear-gradient(135deg, var(--muted) 50%, transparent 50%),
+                    linear-gradient(to right, rgba(255,255,255,0.02), rgba(255,255,255,0.02));
+  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), 100% 0;
+  background-size: 6px 6px, 6px 6px, 1px 1.6em;
+  background-repeat: no-repeat;
+  padding-right: 36px;
+}
+.select:focus{box-shadow:0 0 0 4px rgba(96,165,250,0.06);border-color:rgba(96,165,250,0.35)}
+
+/* Output area */
+.output{background:var(--glass);padding:12px;border-radius:10px;min-height:120px;max-height:260px;overflow:auto;font-family:var(--mono);font-size:14px;color:var(--text);line-height:1.45;border:1px solid rgba(255,255,255,0.02)}
+.output:focus{outline:none;box-shadow:0 6px 18px rgba(0,0,0,0.6)}
+.output pre{white-space:pre-wrap;margin:0;font-family:var(--mono);font-size:13px;color:#dff4ff}
+
+/* Fact list (bullet style) */
+.fact-list{margin:6px 0 0 18px;padding:0;color:var(--text);list-style:disc}
+.fact-list li{margin:8px 0;font-family:var(--ui);font-size:14px;line-height:1.4}
+
+/* Controls / buttons */
+.controls{display:flex;gap:10px;align-items:center;margin-top:12px}
+.btn{border:0;padding:9px 14px;border-radius:10px;font-weight:700;cursor:pointer;letter-spacing:0.2px}
+.btn:focus{outline:2px solid rgba(96,165,250,0.16);outline-offset:2px}
+.btn.primary{background:linear-gradient(90deg,var(--accent), #3b82f6);color:#04293a}
+.btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-weight:600}
+
+/* Small responsive tweaks */
+@media (max-width:700px){
+  .container{padding:14px}
+  .card{padding:12px}
+  .controls{flex-wrap:wrap}
+}
+
+/* Footer */
+.site-foot{margin-top:18px;color:var(--muted);font-size:13px}
+.note{margin:0}
+
+/* Misc helpers */
+code{background:rgba(255,255,255,0.02);padding:2px 6px;border-radius:6px;font-family:var(--mono);font-size:12px;color:#b9e0ff}

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>API Cards — Motivation · Dad Jokes · Fun Facts</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container" role="main" aria-label="API Cards">
+    <header class="site-header">
+      <h1 class="brand">API Cards</h1>
+      <p class="subtitle">Motivation • Dad Jokes • Fun Facts — dark professional theme</p>
+    </header>
+
+    <section class="grid" aria-live="polite">
+      <!-- Motivation card -->
+      <article class="card" id="card-motivation" aria-labelledby="mot-title">
+        <div class="card-head">
+          <h2 id="mot-title">Motivation</h2>
+        </div>
+
+        <label for="mot-category" class="label">Category</label>
+        <select id="mot-category" class="select" aria-label="Motivation category">
+          <option value="work&career">Work &amp; Career</option>
+          <option value="health&fitness">Health &amp; Fitness</option>
+          <option value="lifeandgrowth">Life and Growth</option>
+          <option value="success&achievement">Success &amp; Achievement</option>
+        </select>
+
+        <div class="output" id="out-motivation" role="region" aria-live="polite">
+          Choose a category and click Generate.
+        </div>
+
+        <div class="controls">
+          <button id="gen-mot" class="btn primary">Generate</button>
+          <button class="btn secondary copy" data-target="out-motivation" aria-label="Copy motivation output">Copy</button>
+        </div>
+      </article>
+
+      <!-- Dad joke card -->
+      <article class="card" id="card-dadjoke" aria-labelledby="dad-title">
+        <div class="card-head">
+          <h2 id="dad-title">Dad Joke</h2>
+        </div>
+
+        <div class="output" id="out-dadjoke" role="region" aria-live="polite">
+          Click Generate to fetch a dad joke. Title will appear first; content appears below if available.
+        </div>
+
+        <div class="controls">
+          <button id="gen-dadjoke" class="btn primary">Generate</button>
+          <button class="btn secondary copy" data-target="out-dadjoke" aria-label="Copy dad joke output">Copy</button>
+        </div>
+      </article>
+
+      <!-- Fun facts card -->
+      <article class="card" id="card-funfact" aria-labelledby="fun-title">
+        <div class="card-head">
+          <h2 id="fun-title">Fun Facts (x5)</h2>
+        </div>
+
+        <label for="fun-category" class="label">Category</label>
+        <select id="fun-category" class="select" aria-label="Fun fact category">
+          <option value="animals">Animals</option>
+          <option value="technology">Technology</option>
+          <option value="humans">Humans</option>
+          <option value="geography">Geography</option>
+          <option value="science">Science</option>
+          <option value="random">Random</option>
+        </select>
+
+        <div class="output" id="out-funfact" role="region" aria-live="polite">
+          <div class="meta-line" id="funfact-meta" aria-hidden="true"></div>
+          <ul id="out-funfact-list" class="fact-list" aria-live="polite">
+            <!-- JS will insert <li> titles here -->
+          </ul>
+        </div>
+
+        <div class="controls">
+          <button id="gen-funfact" class="btn primary">Generate 5 Facts</button>
+          <button class="btn secondary copy" data-target="out-funfact" aria-label="Copy fun facts output">Copy</button>
+        </div>
+      </article>
+    </section>
+
+    <footer class="site-foot">
+      <p class="note">Tip: For production, enable CORS on the API server or run a small server-side proxy.</p>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

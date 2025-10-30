@@ -45,6 +45,7 @@ html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg-0) 0%,
   border:1px solid rgba(255,255,255,0.06);
   background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03));
   color:var(--text);
+  background-color: #071227;
   font-size:14px;
   outline:none;
   appearance: none;
